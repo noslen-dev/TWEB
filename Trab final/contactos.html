@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Trab_final.css">
+    <link rel="icon" href="imagens/Logo.webp" type="image/x-icon">
+    <title>Contactos - USF Linha de Algés</title>
+</head>
+<body>
+  <header>
+    <nav>
+        <label for="toggle" id="menu_btn">&#9776;</label>
+        <input type="checkbox" id="toggle">
+        <ul class="nav_links" id="nav_hei">
+            <li><img src="imagens/Logo.webp" alt="Logo" height="90px" width="100px" class="logo"></li>
+            <li><a href="Principal.html">Início</a></li>
+            <li>
+              <a href="#" id="who_are_we">Quem Somos <span id="arrow">&#x25BC;</span></a>
+              <div id="drop_menu">
+                <a href="Sobre_nos.html">Sobre Nós</a>
+                <a href="equipa.html">A equipa</a>
+                <a href="contactos.html">Contactos</a>
+              </div>
+            </li>
+            <li><a href="O-que-fazemos.html">O que fazemos</a></li>
+            <li><a href="recursos.html">Recursos e Indicadores</a></li>
+            <li><a href="mais_apoio.html">Mais Apoio</a></li>
+            <li><a href="login/index.html">Login</a></li>
+        </ul>
+    </nav>
+</header>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.619204716812!2d-9.229796384655327!3d38.70359047960092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1ecb7c326dbfd3%3A0xdcbcf7f6c6c33bfe!2sUnidade%20de%20Sa%C3%BAde%20de%20Alg%C3%A9s!5e0!3m2!1spt-PT!2spt!4v1610138405900!5m2!1spt-PT!2spt" width="100%" height="550"></iframe>
+    <main class="contactos">
+      <section class="telefone_mail">
+          <div class="align_contactos">
+            <h3>Contacte-nos</h3>
+          <div class="contactos"> 
+              <img src="imagens/telefone.png" alt="telefone" class="tel_img">
+              <div class="alinha_telefone">
+                <p class="primeiro_p">Telefone-nos</p> 
+                <a href="tel:239488261">239488261</a>
+             </div>
+             <img src="imagens/mail.png" alt="" class="mail_img">
+             <div class="alinha_email">
+                 <p class="primeiro_p">Envie-nos um mail</p>
+                 <a href="mailto:usflinhalges@arscentro.min-saude.pt">usflinhalges@arscentro.min-saude.pt</a>
+            </div>
+            <img src="imagens/mapa.png" alt="mapa" class="img_visita">
+            <div class="alinha_visita">
+                <p class="primeiro_p">Venha Visitar-nos</p>
+                <a href="https://www.google.com/maps/place/R.+Dr.+Manuel+de+Arriaga,+1495-079+Alg%C3%A9s/@38.7038374,-9.2301685,17z/data=!3m1!4b1!4m5!3m4!1s0xd1ecb7c2299d11d:0x1772913e83d2409d!8m2!3d38.7038374!4d-9.2279798" target="_blank">R. Dr. Manuel de Arriaga <br>s/ n.º, 1495-079 Algés </a>
+           </div>
+          </div>
+      </section>
+      <section class="horarios">
+          <h3>Horários</h3>
+          <p>O nosso atendimento é personalizado. Acessibilidade garantida por alargamento do horário das 8h às 20h nos dias úteis. <br>
+              Consulta no próprio dia nas situações de doença aguda. <br>
+              Marcação de consulta programada em presença física, por telefone e e-mail.</p>
+      </section>
+      </div>
+      <div class="align_form">
+      <h3 class="form_caption">Envie-nos uma mensagem</h3>
+      <div class="form">
+        <form action="">
+          <label for="fname">Nome*</label>
+          <input type="text" id="fname" name="firstname" pattern="[A-zÀ-ú]+" required>
+          <label for="lname">E-mail*</label>
+          <input type="email" id="femail" name="email" required>
+          <label for="subject">Assunto*</label>
+          <textarea id="subject" name="subject" style="height:200px" required></textarea>
+          <input type="submit" value="Enviar">
+        </form>
+      </div>
+      </div> 
+   </main>
+
+   <footer>
+        Direitos autorais © 2020 Todos os direitos reservados - Linha de Algés
+ </footer>
+ <script src="scripts/trab_final.js"></script>
+</body>
+</html>

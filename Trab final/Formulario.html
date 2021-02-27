@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <title>Formulário Médico de Família - USF Linha de Algés</title>
+    <link rel="stylesheet" href="css/Trab_final.css" type="text/css">
+  </head>
+  <body>
+    <header>
+      <nav>
+          <label for="toggle" id="menu_btn">&#9776;</label>
+          <input type="checkbox" id="toggle">
+          <ul class="nav_links" id="nav_hei">
+              <li><img src="imagens/Logo.webp" alt="Logo" height="90px" width="100px" class="logo"></li>
+              <li><a href="Principal.html">Início</a></li>
+              <li>
+                <a href="#" id="who_are_we" >Quem Somos <span id="arrow">&#x25BC;</span></a>
+                <div id="drop_menu">
+                  <a href="Sobre_nos.html">Sobre Nós</a>
+                  <a href="equipa.html">A equipa</a>
+                  <a href="contactos.html">Contactos</a>
+                </div>
+              </li>
+              <li><a href="O-que-fazemos.html">O que fazemos</a></li>
+              <li><a href="recursos.html">Recursos e Indicadores</a></li>
+              <li><a href="mais_apoio.html">Mais Apoio</a></li>
+              <li><a href="login/index.html">Login</a></li>
+          </ul>
+      </nav>
+  </header>
+    <main class="f1">
+    <div class="testbox">
+      <form class="form1">
+        <div class="banner">
+          <h1 class="fh1">Formulário: Médico de Família</h1>
+        </div>
+        <p class="top-info">Preencha o seguinte formulário que a informação requerida e escolha o Médico de Família que deseja ter. Será enviado um e-mail de resposta o mais breve possível. <br/> Obrigado pela compreensão!</p>
+        <div class="item">
+          <p class="infop">O seu nome completo<span class="required">*</span></p>
+          <div class="item">
+            <input class="forminput" type="text" name="name" placeholder="Nome" pattern="[A-zÀ-ú]+" required/>
+          </div>
+        </div>
+        <div class="question">
+          <p class="infop">Genero<span class="required">*</span></p>
+          <div class="question-answer">
+            <label class="formlabel"><input class="forminput" type="radio" value="none" name="gender" required/> <span class="fspan1">Masculino</span></label>
+            <label class="formlabel"><input class="forminput" type="radio" value="none" name="gender" required/> <span class="fspan1">Feminino</span></label>
+          </div>
+        </div>
+        <div class="item">
+          <p class="infop">Cartão de Identificação<span class="required">*</span></p>
+          <input class="forminput" type="text" name="name" pattern="[0-9]{9}" required/>
+        </div>
+        <div class="item">
+          <p class="infop">Idade<span class="required">*</span></p>
+          <input class="forminput" type="number" name="name" required/>
+        </div>
+        <div class="item">
+          <p class="infop">Morada de Casa<span class="required">*</span></p>
+          <input class="forminput" type="text" name="name" placeholder="Morada" required/>
+          <div class="city-item">
+            <input class="forminput" type="text" name="name" placeholder="Cidade" required/>
+            <input class="forminput" type="text" name="name" placeholder="Código Postal" required/>
+          </div>
+          <div class="item">
+            <p class="infop">Médico de Família <span class="required">*</span></p>
+             <select class="fs1" required>
+              <option value=""> </option>
+              <option value="1">Dr. Afonso Mendes</option>
+              <option value="2">Dra. Priscila Azevedo</option>
+              <option value="3">Dr. Mário Simão</option>
+              <option value="4">Dra. Luciela Fernandes</option>
+              <option value="5">Dr. Vítor Pitarma</option>
+            </select>
+           </div>
+        </div>
+        <div class="item">
+          <p class="infop">Email<span class="required">*</span></p>
+          <input class="forminput" type="email" name="name" required/>
+        </div>
+        <div class="item">
+          <p class="infop">Telefone<span class="required">*</span></p>
+          <input class="forminput" type="text" name="name" pattern="[0-9]{9}" required/>
+        </div>
+        <div class="item">
+          <p class="infop">Comentários</p>
+          <textarea class="formta" rows="3"></textarea>
+        </div>
+        <div class="btn-block">
+           <button class="formbutton" type="submit">Submeter</button>
+        </div>
+      </form>
+    </div>
+  </main>
+  <footer class="fazer">
+    Direitos autorais © 2020 Todos os direitos reservados - USF CoimbraCelas
+</footer>
+<script src="scripts/trab_final.js"></script>
+  </body>
+</html>

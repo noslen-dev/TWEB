@@ -1,0 +1,1456 @@
+$text-color:#666666;
+$font-family:'Open Sans',Arial,sans-serif;
+$theme_color_contactos:#39628c; //cores dos titulos e texto para a página dos contactos
+$ali-centrado: center;
+$margem200: 200px;
+$margem5: 0px;
+@mixin texto_links_contactos($color) { //Para formatar o texto e os links da página dos contactos-->Parametro cor pois as cores dos links diferem da cor do texto
+  font-size: 16px;
+  font-weight: 600px;
+  color: $color;
+  font-family: $font-family;
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: $font-family;
+  color: $text-color;
+}
+
+
+/* top menu */
+.nav_links{
+  z-index: 9;
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  height: 110px;
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: solid 1px #cccfce;
+  li{
+    margin: 45px 25px;
+    font-family: $font-family;
+    font-size: 13px;
+    text-transform: uppercase;
+  }
+  a{
+    text-decoration: none;
+    padding-bottom: 10px;
+    &:visited{
+      color: black;
+  }
+  &:hover{
+      color: red;
+  }
+  &:focus{
+    outline: 0; // Remover aquele "border" estranho
+  }
+}
+}
+nav ul li:first-child {
+margin-right: auto;
+position: relative;
+bottom: 40px;
+}
+
+
+#who_are_we:hover + #drop_menu{ //Quando fazemos hover no Quem Somos o submenu é exibido| mantém se o mesmo para o media querie
+display: block;
+}
+
+
+#drop_menu {
+display: none;
+position: absolute;
+padding-top: 5px;
+min-width: 150px;
+background-color: white;
+ 
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+&:hover{
+  display: block;
+}
+ a{
+display: block;
+padding-bottom: 10px;
+border: 10px white solid;
+&:hover{
+  color: red;
+  }
+ } 
+}
+
+ label#menu_btn{
+   margin: 0 40px 0 0;
+   font-size: 26px;
+   line-height: 70px; // centrado
+   display: none;
+   width: 26px;
+ }
+
+
+#toggle{
+  display: none;
+}
+
+@media only screen and(max-width:834px){// menor que 500px
+ 
+  label#menu_btn{
+      display: block; //menu aparece
+      cursor: pointer;
+      position: relative; //Posicionar o "botão" do menu
+      left: 20px;
+  }
+   
+  nav{
+      background-color: $theme_color_contactos;
+  }
+
+
+  .nav_links{
+      position: absolute; //Para o azul do nav ficar com bom aspeto
+      height: 525px; //Definir um tamanho para poder aplicar a cor de fundo corretamente
+      background-color: white;
+      text-align: left;
+      display: none;
+      border: none; //remover a border para os links aparecerem bonitos
+      img{display: none;}//esconder o logo
+      a{
+          width: 100%;
+          display: block; //itens aparecerem em coluna
+          margin: 0px;
+          border-bottom: solid 1px #cccfce;
+          &:hover{
+              color: $theme_color_contactos;
+          }
+      }
+  }
+  #toggle:checked + .nav_links{ // Para aplicar ao menu
+      display: block; //Para o menu aparecer quando carregamos no ícone
+  }
+
+    #drop_menu { // Retirar as formatações de cima que transformava este menu numa "caixa"
+      display: none; //Não ser mostrado normalmente
+      position: static; //reset
+      padding-top: 0; //reset
+      margin-top: 0; //reset
+      min-width: 0; //reset
+      box-shadow: none; //reset
+         a{ 
+          padding-left: 20px;
+          padding-top: 35px; //Para ficarem bonitos
+          border: none; //reset
+          margin: 0px; //reset
+          border-bottom: solid 1px #cccfce;
+        &:hover{
+          color: $theme_color_contactos;
+        }
+      } 
+ }  
+ #who_are_we:hover + #drop_menu{ //Quando fazemos hover no Quem Somos o submenu é exibido| mantém se o mesmo para o media querie
+  display: none;
+  }
+}
+
+
+  /* Fim do menu */
+
+  
+  /*Inicio Pagina Principal */
+  
+  // Slideshow
+
+.carousel{
+  width: 100%;
+  .mySlides {
+    display:none;
+    height: 700px;
+    object-fit: cover;
+    }
+}
+
+.conteudo_side{
+  display: flex;
+  margin-bottom: 20px;
+  .side_image{
+    flex-shrink: 1;
+    width: 50%;
+    object-fit: cover;
+  }
+  .texto_side{
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    margin-right: 15px;
+    margin-left: 15px;
+    .titulo_side{
+      color: $theme_color_contactos;
+      font-size: 2em;
+    }
+    .p_side{
+      color: $text-color;
+      font-size: 20px;
+      text-align: center;
+      margin-top: 20px;
+      line-height: 1.6;
+      min-width: 100px;
+    }  
+  }
+}
+.artigos{
+  display: flex;
+  justify-content: space-between;
+  margin: 100px 30px;
+  .primeiro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 30px;
+    .imagem_primeiro{
+      width: 100px;
+      height: 100px;
+    }
+    .titulo_primeiro{
+      margin: 10px 0px;
+      color: $theme_color_contactos;
+    }
+    .titulo_primeiro_mod{
+      position: relative;
+      left: 10px;
+    }
+    .texto_primeiro{
+      position: relative;
+      left: 10px;
+      top: 10px;
+      text-align: center;
+    }
+  }
+}
+
+
+@media only screen and(max-width:1135px){
+  .conteudo_side{
+    flex-wrap: wrap;
+    .side_image{
+      width: 100%;
+    }
+    .texto_side{
+      position: relative;
+      top: 20px;
+    }
+  }
+
+}
+@media only screen and(max-width:940px){
+  .artigos{
+    flex-wrap: wrap;
+    .telefone_media{
+      position: relative;
+      top: 40px;
+      left: 40px;
+    }
+   }
+  }
+  @media only screen and(max-width:785px){
+    .artigos{
+      flex-wrap: wrap;
+      .telefone_media{
+        position: relative;
+        top: 30px;
+      }
+      .esteto_media{
+        position: relative;
+        top: 30px;
+      }
+     }
+  }
+
+  @media only screen and(max-width:718px){
+    .special{
+      position: relative;
+      top: 15px;
+    }
+    .titulo_primeiro_mod{
+      position: relative;
+      top: 10px;
+
+    }
+    
+  }
+
+
+
+
+ 
+  /*Fim Pagina Principal */
+
+
+
+
+
+
+
+
+  /* Inico pagina Sobre Nos*/
+
+  div.quem_somos{
+    display: flex;
+    justify-content: center;
+}
+
+
+div .equipa{
+    width:400px;
+    height:300px;
+}
+
+p.sobre_nos_main{
+text-align: center;
+position: relative;
+width: 60%;
+left: 250px;
+font-size: 16px;
+line-height: 30px;
+}
+
+main.content_somos{
+  margin-right: 150px;
+  margin-left: 150px;
+}
+
+
+div.titulo_somos{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 100px;
+}
+
+
+div h1.titulo_somos{
+  font-size: 50px;
+  font-family: $font-family;
+  color: $theme_color_contactos;
+}
+
+
+p.sobre_nos{
+  text-align: left;
+  position: relative;
+  width: 60%;
+  font-size: 16px;
+  line-height: 30px;
+  margin: 20px;
+  font-size: 20px;
+  font-family: $font-family;
+  color: $text-color;
+  }
+
+  h2.sobre_nos{
+      font-family: $font-family;
+      color: $theme_color_contactos;
+      position: relative;
+      left: 20px;
+  }
+  
+.titulo_historia_somos{
+  font-size: 50px;
+  line-height: normal;
+  margin-bottom: 25px;
+  font-family: $font-family;
+  color: $theme_color_contactos;
+  position: relative;
+  left: 20px;
+  }
+
+  .equipa_img_sobre{
+     width: 740px;
+     height:auto;
+     max-width: 100%; 
+     display: block; //Para alinhar a imagem
+     margin-left: auto; // |
+     margin-right: auto;// |
+     position: relative;
+     bottom: 50px;
+
+  }
+  
+  .separator_sobre{
+      margin: 50px;
+  }
+
+  div.visao_missao{
+      display: flex;
+      width: 100%;
+  }
+   h1.visao_missao{
+     font-family: $font-family;
+     color: $theme_color_contactos;
+     position: relative;
+     left: 21px;
+   }
+
+  p.visao_missao_visao{
+  text-align: left;
+  position: relative;
+  top: 50px;
+  right: 80px;
+  width: 55%;
+  line-height: 30px;
+  margin: 20px;
+  line-height: 30px;
+  font-size: 20px;
+  font-family: $font-family;
+  color: $text-color;
+  }
+
+  p.visao_missao_missao{
+      text-align: left;
+      position: relative;
+      top: 67px;
+      right: 110px;
+      width: 55%;
+      line-height: 30px;
+      font-size: 20px;
+      font-family: $font-family;
+      color: $text-color;
+  }
+
+  h1.visao_missao_missao{
+      font-family: $font-family;
+      color: $theme_color_contactos;
+  }
+  
+  h1.valores_sobre{
+      margin-top: 100px;
+      margin-bottom: 40px;
+      font-family: $font-family;
+      color: $text-color;
+      position: relative;
+      left: 20px;
+      color: $theme_color_contactos;
+  }
+
+  h2.valores_sobre{
+      margin-bottom: 40px;
+      font-family: $font-family;
+      color: $theme_color_contactos;
+      position: relative;
+      left: 20px;
+  }
+
+  ul.valores_sobre{
+      list-style-type: none;
+      margin-bottom: 50px;
+      position: relative;
+      left: 20px;
+  }
+
+  ul.valores_sobre li{
+      padding-bottom: 25px;
+      font-size: 20px;
+      font-family: $font-family;
+      color: $text-color;
+  }
+
+  .position_img{
+    width: 500px;
+  }
+   
+  .imagem_somos{
+    position: absolute;
+    left: 700px;
+    bottom: 50px;
+    width: 100%;
+    height: auto;
+  }
+
+  @media only screen and(max-width:834px){//meter o conteudo da pagina para cima quando o menu fica "ativo"
+    main.content_somos{
+      position: relative;
+      bottom: 100px;
+    }
+  }
+  @media only screen and(max-width:1325px){ //meter a imagem direita
+    .imagem_somos{
+      left: 450px;
+      bottom: 70px;
+    }
+  }
+
+  @media only screen and(max-width:1099px){
+    .imagem_somos{ //Imagem desaparece
+      display: none;
+    }
+    main.content_somos{
+      margin-right: 50px;
+      margin-left: 50px;
+      p.sobre_nos{
+        width: 100%;
+      }
+      h1.visao_missao_missao{ //missao
+        position: relative;
+        top: 50px;
+        left: 20px;
+      }
+      p.visao_missao_missao{ //texto missao
+        position: relative;
+        left: 25px;
+        width: 100%;
+        
+      }
+
+      h1.visao_missao{ //titulo visao
+        position: relative;
+        top: 50px;
+      }
+      .visao_missao{ //div k contem a missao e a visao
+        display: inline;
+      }
+
+      p.visao_missao_visao{ //texto visao
+        width: 100%;
+        position: relative;
+        left: 5px;
+      }
+      .valores_sobre{ //ul
+        position: relative;
+      }
+      .visao_missao{
+        position: relative;
+        bottom: 70px;
+      }
+
+    }
+    footer{
+      position: relative; 
+    }
+
+  }
+/*Fim Pagina Sobre Nos
+
+  
+  /*galeria de imagens*/
+
+  div.equipa_sobre_nos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+   }
+
+
+ main.content_equipa{
+     position: relative;
+     top:500px;
+     margin-right: 150px;
+     margin-left: 150px;
+
+}
+   h1.equipa_sobre_nos{
+    font-family: $font-family;
+    color: $text-color;
+    font-size: 50px;
+   }
+
+   div.fotos_sobre_nos{
+       display: flex;
+       position: relative;
+       justify-content: space-around;
+       bottom: 250px;
+       text-align: center;
+   }
+
+   img.fotos_sobre_nos{
+       height: 320px;
+       width: 300px;
+   }
+
+   figcaption.caption_doc{
+        font-size: 30px;
+        font-family: $font-family;
+        color: $text-color;
+
+   }
+
+   span.caption_doc{
+    font-size: 20px;
+    font-family: $font-family;
+    color: $text-color;
+   }
+
+
+   footer{
+      text-align: center;
+      position: relative;
+      bottom: 20px;
+  }
+  
+div.equipa_title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 100px;
+}
+
+h1.equipa_title{
+    font-family: $font-family;
+    color: $theme_color_contactos;
+    font-size: 50px;
+
+}
+
+.container {
+    display: grid; 
+    grid-gap: 40px; /* 40px entre cada coluna (cada div) */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));/*auto fit-encaixa novas colunas automaticamente| minmax-tamanho máximo
+    e minimo| 1fr-mesmo tamanho | minmax e auto-fit tornam responsive*/
+    grid-auto-rows: 350px; /*tamanho das linhas */
+    margin-bottom: 100px;
+  }
+
+  .container > div > img {
+    width: 100%; /* A imagem ocupa todo o espaço do div*/
+    height: 100%;
+    object-fit: cover; /* Permite preservar a qualidade da imagem quando esta é diminuida(preserva o aspect ratio) */
+  }
+  .container{
+  img {
+    border-radius: 10px; /* Cantos arredondados */
+    padding: 5px;
+  }
+  }
+  .description {
+    display: none; /* Fazer as descrições desaparecerem */
+    position: absolute;
+  }
+
+  .description_2{
+    font-size: 25px;
+  }
+
+  .container > div:hover { /*seleciona todos os divs em que o pai tem class="container"*/
+    transform: scale(1.1); /* Aumenta o tamanho do elemento */
+  }
+  .container > div:hover .description { /* Alinha as descrições*/
+    display: block;
+    text-align: center;
+    margin-bottom: 40px;
+
+  }
+  
+  .container > div:hover img { 
+    opacity: 0.4;
+  }
+  
+  .container > div { /* Alinha as descrições no centro da imagem */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 2em;
+    color:#20263f;
+    font-family: $font-family;
+  }
+  
+  /* Pagina dos contactos*/
+  main.contactos{
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-bottom: 50px;
+    .telefone_mail{
+      margin-top: 50px;
+      margin-bottom: 50px;
+      h3{
+        color: $theme_color_contactos;
+        font-family:$font-family ;
+        font-size: 24px;
+        font-weight: 600px;
+      }
+      .contactos{
+        margin-top: 50px;
+        display: flex;
+        align-items: flex-start;
+        .alinha_telefone{
+          margin-right: 100px;
+        .primeiro_p{
+          @include texto_links_contactos($text-color);
+          position: relative;
+          top: 15px;
+          margin-bottom: 20px;
+          width: 100%;
+         }
+         a{
+          @include texto_links_contactos($theme_color_contactos);
+          text-decoration: none;
+          width: 100%;
+         }
+        
+       }
+         .mail_img{
+           position: relative;
+           top: 10px;
+         }
+         .alinha_email{
+          margin-right: 100px;
+          .primeiro_p{
+            @include texto_links_contactos($text-color);
+            position: relative;
+            top: 15px;
+            margin-bottom: 20px; 
+           }
+           a{
+            @include texto_links_contactos($theme_color_contactos);
+            text-decoration: none;
+          } 
+         }
+         .alinha_visita{
+          .primeiro_p{
+            @include texto_links_contactos($text-color);
+            position: relative;
+            top: 15px;
+            margin-bottom: 20px;
+            width: 100%;
+           }
+           a{
+            @include texto_links_contactos($theme_color_contactos);
+            text-decoration: none;
+            width: 100%;
+          } 
+         }
+     }
+    }
+    .horarios{
+      margin-bottom: 50px;
+      h3{
+        margin-bottom: 20px;
+        color: $theme_color_contactos;
+        font-family:$font-family ;
+        font-size: 24px;
+        font-weight: 600;
+      }
+      p{
+        @include texto_links_contactos($text-color);
+        line-height: 24px;
+      }
+    }
+      .form_caption{
+        color: $theme_color_contactos;
+        font-family:$font-family ;
+        font-size: 24px;
+        font-weight: 600px;
+        margin-bottom: 20px;
+      }
+     // Inicio do Formulário
+     .form {
+      position: relative;
+      right: 20px;
+      border-radius: 5px;
+      padding: 20px;
+     
+       /* Seleciona inputs com type text, textarea e selects*/
+      input[type=text],input[type=email] ,select, textarea {
+      background-color:#f5f5f5;
+      width: 100%; /* Full width */
+      padding: 12px; 
+      border: 1px solid #ccc; 
+      border-radius: 4px; 
+      box-sizing: border-box; /* Make sure that padding and width stays in place */
+      margin-top: 6px; 
+      margin-bottom: 16px; 
+      resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+      
+      input[type=submit] {
+      background-color:$theme_color_contactos;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+     }
+
+   
+     input[type=submit]:hover {
+     background-color: $theme_color_contactos;
+
+    }
+
+
+    input:focus,textarea:focus {
+      box-shadow: 0 0 5px rgba(81, 203, 238, 1); //Para o a àrea do texto ficar brilhante(azul)
+      border: 1px solid rgba(81, 203, 238, 1);
+    }
+
+    input, textarea{
+      @include texto_links_contactos($text-color);
+    }
+  
+
+    label{
+      @include texto_links_contactos($text-color);
+      font-weight: bold;
+    }
+
+ 
+  }//Fim do Formulário 
+
+}
+
+
+
+@media only screen and(max-width:1300px){
+  main.contactos{
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+   .tel_img{
+     position: relative;
+     left: 20px;
+   }
+  
+  .alinha_telefone{
+    position: relative;
+    top: 70px;
+    right: 50px;
+    .primeiro_p{
+      width: 100px;
+    }
+  }
+
+  .mail_img{
+    position: relative;
+    left: 50px;
+  }
+  .alinha_email{
+    position: relative;
+    top: 70px;
+    right: 50px;
+  }
+
+  .img_visita{
+    position: relative;
+    left: 50px;
+  }
+
+  .alinha_visita{
+    width: 1000px;
+    position: relative;
+    top: 70px;
+    right: 50px;
+    .primeiro_p{
+      width: 500px;
+    }
+
+  }
+  
+  section.horarios{
+    position: relative;
+    top: 50px;
+  }
+
+  div.align_form{
+    position: relative;
+    top: 50px;
+  }
+
+}
+
+  /* Fim da página dos contactos */
+
+  // Inicio pagina dos recursos
+  main.recursos{
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 300px;
+    position: relative;
+    top: 150px;
+    width: 70%;
+    font-size: 18px;
+    .titulo{
+      color: $theme_color_contactos;
+      font-size: 40px;
+    }
+    .title__recursos{
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .title__recursos__2{
+      text-align: center;
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+    }
+    p{
+      line-height: 1.6;
+    }
+    ul{
+      line-height: 1.6;
+    }
+    button{
+      font-size: 18px;
+    }
+  }
+ 
+
+
+  .accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+  
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  
+  .accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2212";
+  }
+  
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+  
+  
+  //Fim pagina mais apoio
+
+  //Inicio pagina recursos
+ *,
+ *::before,
+ *::after {
+   box-sizing: border-box;
+ }
+ 
+
+ .main_recursos{
+   position: relative;
+   top: 150px;
+   max-width: 1200px;
+   margin-right: auto;
+   margin-left: auto;
+   margin-bottom: 200px;
+ }
+ 
+ .title_recursos{
+   margin-bottom: 20px;
+   font-size: 50px;
+   color: $theme_color_contactos;
+   text-align: center;
+   font-family: $font-family;
+ }
+ 
+ p.card_text{
+   font-family:$font-family;
+   text-align: left;
+   text-indent: 15px;
+   text-align: justify;
+ }
+ 
+ h2.card_title{
+   color: $theme_color_contactos;
+   font-family: $font-family;
+   text-align: center;
+ }
+ 
+ img{
+   height: auto;
+   max-width: 100%;
+   vertical-align: middle;
+ }
+ 
+ .btn {
+   color: $theme_color_contactos;
+   padding: 0.8rem;
+   font-size: 14px;
+   text-transform: uppercase;
+   border-radius: 4px;
+   font-weight: 400;
+   display: block;
+   width: 100%;
+   cursor: pointer;
+ }
+ 
+ .btn:hover {
+   background-color: rgba(255, 255, 255, 0.12);
+ }
+ 
+ .cards {
+   display: flex;
+   flex-wrap: wrap;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+ }
+ 
+ .cards_item {
+   display: flex;
+   padding: 1rem;
+ }
+ 
+ @media (min-width: 40rem) {
+   .cards_item {
+     width: 50%;
+   }
+ }
+ 
+ @media (min-width: 56rem) {
+   .cards_item {
+     width: 33.3333%;
+   }
+ }
+ 
+ .card {
+   background-color: white;
+   border-radius: 0.25rem;
+   box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
+ }
+ 
+ .card_content {
+   padding: 1rem;
+ }
+ 
+ .card_title {
+   text-align: center;
+   font-size: 1.1rem;
+   font-weight: 700;
+   letter-spacing: 1px;
+   color: $theme_color_contactos;
+   text-transform: capitalize;
+   margin-bottom: 10px;
+ }
+ 
+ .card_text {
+   font-size: 0.875rem;
+   line-height: 1.5;
+   margin-bottom: 1.25rem;    
+   font-weight: 400;
+ }
+ 
+   //Fim pagina recursos
+ 
+   
+ //Inicio pagina graficos
+ 
+ 
+ .graf_main{
+   margin-left: $margem200;
+   margin-right: $margem200;
+   margin-bottom: 250px;
+   position: relative;
+   top: 200px;
+   @media(max-width: 900px){
+     margin-right: 10px;
+     margin-left: 10px;
+   }
+ }
+
+ h1.graph{
+   position: relative;
+   bottom: 50px;
+   color: $theme_color_contactos;
+   font-family: $font-family;
+   text-align: center;
+   font-size: 50px;
+ }
+ 
+ h2.graph{
+   color: $theme_color_contactos;
+   font-family: $font-family;
+   text-align: center;
+   margin-bottom: 10px;
+   margin-top: 10px;
+   font-size: 30px;
+ }
+ 
+ p.graph{
+   text-align: justify;
+   font-family: $font-family;
+   font-size: 20px;
+   line-height: 30px;
+ }
+ 
+ a.graph{
+   color: blue;
+   text-decoration: underline;
+ }
+
+ .separa{
+   margin-top: 10px;
+   margin-bottom: 30px;
+   color: $theme_color_contactos;
+ }
+ 
+ @media(max-width: 1200px){
+   body{
+       margin-left: $margem5;
+       margin-right: $margem5;
+   }
+ }
+ 
+ //Fim página gráficos
+
+ //inicio pagina formularios
+ 
+main.f1{
+  position: relative;
+  top: 150px;
+  min-height: 100%;
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+body p.infop{ 
+  padding: 0;
+  margin: 0;
+  outline: none;
+  font-family: $font-family;
+  font-size: 14px;
+  color: $text-color;
+  line-height: 22px;
+}
+
+h1.fh1{
+  position: absolute;
+  margin: 0;
+  font-size: 36px;
+  color: white;
+  z-index: 2;
+}
+
+span.required {
+  color: red;
+}
+
+.testbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+  padding: 20px;
+}
+
+form.form1{
+  color: $text-color;
+  font-family: $font-family;
+  width: 100%;
+  padding: 20px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 0 30px 0 $theme_color_contactos;
+}
+
+.banner{
+  position: relative;
+  height: 180px;
+  background-image: url("file:///C:/Users/Nelson/Desktop/Trab%20final/imagens/medico-assistente.jpg");  
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.banner::after{
+  content: "";
+  background-color: rgba(0, 0, 0, 0.4); 
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+p.top-info {
+  color: $text-color;
+  font-family: $font-family;
+  margin: 10px 0;
+  text-align: justify;
+  text-indent: 5px;
+  font-family: $font-family;
+}
+
+input, select.fs1{
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+input.forminput{
+  width: calc(100% - 10px);
+  padding: 5px;
+}
+
+select.fs1{
+  width: 100%;
+  padding: 7px 0;
+  background: transparent;
+}
+
+.item:hover p, .question:hover p, .question label:hover, input:hover::placeholder{
+  color: $theme_color_contactos;
+}
+  
+.item input:hover, .item select:hover{
+  border: 1px solid transparent;
+  box-shadow: 0 0 5px 0 $theme_color_contactos;
+  color: $theme_color_contactos;
+}
+
+.item{
+  position: relative;
+  margin: 10px 0;
+}
+
+.question input{
+  width: auto;
+  margin: 0;
+  border-radius: 50%;
+}
+
+.question input.forminput, .question span.fspan1{
+  vertical-align: middle;
+}
+  
+.question label.formlabel{
+  display: inline-block;
+  margin: 5px 20px 15px 0;
+}
+
+textarea.formta{
+  width: calc(100% - 12px);
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 100%;
+  padding: 7px 0;
+  background: transparent;
+}
+
+.btn-block{
+  margin-top: 10px;
+  text-align: center;
+}
+
+button.formbutton{
+  width: 150px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px; 
+  background: $theme_color_contactos;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.formbutton button:hover{
+  background: $theme_color_contactos;
+}
+
+@media (max-width: 1500px){
+  main.f1{
+  min-height: 100%;
+  margin-left: 50px;
+  margin-right: 50px;
+ }
+}
+
+
+@media (max-width: 843px){
+  main.f1{
+  position:relative;
+  bottom:500px;
+  }
+
+}
+
+@media (max-width: 800px){
+  .name-item, .city-item{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  }
+  .name-item input, .city-item input{
+  width: calc(50% - 20px);
+  }
+  .city-item select{
+  width: calc(50% - 8px);
+  }
+}
+
+
+
+ //fim pagina formulários
+
+ /* O Que Fazemos */
+ 
+div.oqfazemos{
+  margin-left: 300px;
+  margin-right: 300px;
+  position: relative;
+  top: 150px;
+}
+
+h1.oqfh1{
+  color: $theme_color_contactos;
+  text-align: $ali-centrado;
+  font-size: 30px;
+  font-family: $font-family;
+  font-weight: bold;
+}
+
+h2.oqfh2{
+  color: $theme_color_contactos;
+  text-align: $ali-centrado;
+  font-size: 30px;
+  font-family: $font-family;
+  font-weight: bold;
+}
+
+h3.oqfh3{
+  color: $theme_color_contactos;
+  text-align: $ali-centrado;
+  font-family: $font-family;
+  font-weight: 100;
+  text-transform: none;
+  line-height: 1.5;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+p.oqfp ,li{
+  color: $text-color;
+  font-family: $font-family;
+  line-height: 30px;
+  font-size: 20px;
+  color:$text-color;
+}
+
+h5.oqfh5{
+  color: $text-color;
+  text-align: $ali-centrado;
+  font-family: $font-family;
+  font-style: italic;
+  font-weight: bold;
+}
+
+div span.s1{
+  font-style: italic;
+}
+
+div ul.ofqul{
+  list-style-type: none;
+  color: $text-color;
+  text-align: justify;
+  font-family: $font-family;
+  font-weight: 100;
+  text-transform: none;
+  line-height: 30px;
+  font-size: 16px;
+}
+
+ul.ofqul{
+  line-height: 30px;
+  font-size: 16px;
+}
+
+div li::before{
+  content: "\2022";
+  color: $theme_color_contactos;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em; 
+}
+
+
+hr.oqfhr{
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $theme_color_contactos;
+  margin: 1em 0;
+  padding: 0;
+}
+.last{
+  margin-bottom: 10px;
+
+}
+
+.consul{
+  margin: 10px 0;
+}
+
+.fazer{
+  position: relative;
+  top: 180px;
+}
+
+.form_link{
+  font-size: 20px;
+  position: relative;
+  left: 90px;
+  color: blue;
+}
+
+div img.oqfimg{
+  display: flex;
+  border-radius: 30px;
+  width: 1000px;
+  height: 450px;
+  margin: 0.5em;
+  padding: 0.1em;
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px solid $theme_color_contactos;
+}
+
+@media(max-width: 1400px){
+  div.oqfazemos{
+      margin-left: 85px;
+      margin-right: 85px;
+  }
+
+  div.oqfazemos img.oqfimg{
+      display: flex;
+      border-radius: 20px;
+      width: 400px;
+      height: 180px;
+      margin: auto;
+      border: 2px solid $theme_color_contactos;
+  }
+
+  div.oqfazemos li::before{
+      color: $theme_color_contactos;
+  }
+ }
+
+
+// Fim o que fazemos
